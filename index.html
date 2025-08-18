@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>服务器永久关闭 - PixelWorld</title>
+    
+    <base href="https://yourdomain.com/" />
+    
+    <meta name="description" content="PixelWorld服务器已永久关闭 - 感谢您一直以来的支持">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- 样式和字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4cc9f0;
+            --secondary-color: #f72585;
+            --dark-bg: #1a1a2e;
+            --content-bg: #2a2a40;
+            --text-color: #e6e6e6;
+            --border-color: #4361ee;
+            --muted-color: #6b7280;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            background-image: 
+                linear-gradient(var(--content-bg) 1px, transparent 1px),
+                linear-gradient(90deg, var(--content-bg) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        /* 主容器 */
+        .shutdown-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* 标题样式 */
+        .pixel-title {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--secondary-color);
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            position: relative;
+            line-height: 1.3;
+        }
+        
+        /* 像素角色 */
+        .pixel-character {
+            width: 120px;
+            height: 120px;
+            margin: 2rem 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="4" fill="%23f72585"/><rect x="4" y="8" width="16" height="8" fill="%23f72585"/><rect x="8" y="16" width="8" height="4" fill="%23f72585"/><rect x="8" y="10" width="2" height="2" fill="%231a1a2e"/><rect x="14" y="10" width="2" height="2" fill="%231a1a2e"/><rect x="10" y="14" width="4" height="2" fill="%231a1a2e"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.8;
+            transform: rotate(10deg);
+        }
+        
+        /* 公告内容 */
+        .announcement-box {
+            background-color: var(--content-bg);
+            border: 3px solid var(--secondary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-align: left;
+        }
+        
+        /* 时间线 */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        /* 按钮样式 */
+        .action-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: #1a1a2e;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .action-button:hover {
+            background-color: #3aa8d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .secondary-button {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .secondary-button:hover {
+            background-color: rgba(76, 201, 240, 0.1);
+        }
+        
+        /* 页脚 */
+        .footer {
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 2px dashed var(--primary-color);
+            color: var(--muted-color);
+            font-size: 0.9em;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .pixel-title {
+                font-size: 1.8rem;
+            }
+            
+            .announcement-box {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="shutdown-container">
+        <h1 class="pixel-title fade-in">服务器永久关闭</h1>
+        
+        <div class="pixel-character fade-in"></div>
+        
+        <div class="announcement-box fade-in">
+            <h2>致所有PixelWorld玩家的一封信</h2>
+            <p>我怀着沉重的心情宣布，PixelWorld服务器将于今日永久关闭。</p>
+            
+            <p>自2024年7月19日开服以来，我与各位玩家共同创造了无数美好回忆。从最初的alpha版本到最后的2.3.7版本，每一个方块都承载着我们的热情与汗水。</p>
+            
+            <p>然而，由于以下原因，我不得不做出这个艰难的决定：</p>
+            <ul style="margin-left: 20px;">
+                <li>玩家活跃度逐渐下降</li>
+            </ul>
+            
+            <div class="timeline">
+                <h3>服务器历史时间线</h3>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2024.7.19</div>
+                    <p>PixelWorld服务器创建 (v0.0.0-Alpha)</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2024.12.2</div>
+                    <p>BE转JE互通 (v1.0.0)</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.6.14</div>
+                    <p>最后版本更新 (v2.3.7)</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2025.7.1</div>
+                    <p>服务器永久关闭</p>
+                </div>
+            </div>
+            
+            
+            <h3>特别感谢</h3>
+            <p>我们要特别感谢以下玩家对服务器的杰出贡献：</p>
+            <ul style="columns: 2; list-style-type: none; padding: 0;">
+                <li>WuruCheems</li>
+                <li>ShodBeetle02024</li>
+                <li>zh20110721</li>
+                <li>machangle110</li>
+                <li>manwkic</li>
+            </ul>
+        </div>
+        
+    
+    <footer class="footer">
+        <p>Copyright &copy; 2024-2025 PixelWorld 像素天地</p>
+        <p>感谢您的一路相伴，再见不是终点，而是新的起点。</p>
+    </footer>
+
+    <script>
+        // 淡入动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+        });
+    </script>
+</body>
+</html>
