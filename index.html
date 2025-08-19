@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EternalCraft - 永恒的像素世界</title>
+    <title>Home - EternalCraft</title>
     <style>
         :root {
             --mc-dark: #2d2d2d;
@@ -128,64 +128,27 @@
     <div class="container">
         <header>
             <div class="logo">EternalCraft</div>
-            <p>一个充满冒险与创造的永恒世界</p>
-            <div class="server-ip">play.eternalcraft.com</div>
             <div>
-                <a href="#join" class="pixel-button">立即加入</a>
-                <a href="#about" class="pixel-button">关于服务器</a>
+                <a href="join.html" class="pixel-button">立即加入</a>
+                <a href="about.html" class="pixel-button">关于服务器</a>
             </div>
             <div class="mc-character"></div>
         </header>
-        
-        <div class="main-content">
-            <div class="pixel-card">
-                <h2>服务器特色</h2>
-                <ul>
-                    <li>✔️ 纯净生存与特色玩法</li>
-                    <li>✔️ 24小时稳定运行</li>
-                    <li>✔️ 公平友好的社区</li>
-                    <li>✔️ 定期更新内容</li>
-                    <li>✔️ 专业反作弊系统</li>
-                </ul>
-            </div>
             
             <div class="pixel-card">
                 <h2>最新公告</h2>
-                <p><strong>2023.11.15</strong> - 服务器已更新至1.20.2版本</p>
-                <p><strong>2023.10.30</strong> - 万圣节特别活动开启</p>
-                <p><strong>2023.10.15</strong> - 新主城建设完成</p>
+                <p><strong>2025.7.30</strong> - 服务器开放</p>
             </div>
             
-            <div class="pixel-card">
-                <h2>在线玩家</h2>
-                <p id="player-count">正在获取玩家数据...</p>
-                <div id="player-list"></div>
             </div>
         </div>
         
         <footer>
-            <p>© 2023 EternalCraft 服务器 版权所有</p>
-            <p>与Mojang Studios无关 | 不是官方Minecraft产品</p>
+            <p>Copyright © 2025 EternalCraft </p>
+            <p>与Mojang Studios和Microsoft无关 | 不是官方Minecraft产品</p>
         </footer>
     </div>
 
-    <script>
-        // 模拟玩家数据
-        function updatePlayerStats() {
-            const players = ['Steve', 'Alex', 'Notch', 'Dinnerbone', 'Herobrine', '303'];
-            const online = Math.floor(Math.random() * (players.length - 1)) + 1;
-            
-            document.getElementById('player-count').textContent = `在线玩家: ${online}/${players.length}`;
-            
-            const playerList = document.getElementById('player-list');
-            playerList.innerHTML = '';
-            
-            for (let i = 0; i < online; i++) {
-                const player = document.createElement('p');
-                player.textContent = `🧑 ${players[i]}`;
-                playerList.appendChild(player);
-            }
-        }
         
         // 初始加载
         updatePlayerStats();
