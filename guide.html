@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玩家指南 - EternalCraft</title>
+    <style>
+        /* 共用样式同上，这里只展示新增部分 */
+        
+        .guide-category {
+            margin-bottom: 30px;
+        }
+        
+        .guide-item {
+            background: rgba(0, 0, 0, 0.7);
+            border: 4px solid var(--mc-blue);
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .guide-item h3 {
+            color: var(--mc-green);
+            margin-bottom: 10px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.2rem;
+        }
+        
+        .tab-container {
+            display: flex;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background: black;
+            border: 3px solid var(--mc-blue);
+            cursor: pointer;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .tab.active {
+            background: var(--mc-blue);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">EternalCraft</div>
+            <nav>
+                <a href="index.html" class="pixel-button">首页</a>
+                <a href="about.html" class="pixel-button">服务器信息</a>
+                <a href="guide.html" class="pixel-button">玩家指南</a>
+                <a href="download.html" class="pixel-button">下载</a>
+            </nav>
+        </header>
+        
+        <div class="tab-container">
+            <div class="tab active">新手入门</div>
+            <div class="tab">进阶指南</div>
+            <div class="tab">经济系统</div>
+            <div class="tab">领地保护</div>
+        </div>
+        
+        <div class="guide-category">
+            <div class="guide-item">
+                <h3>如何加入服务器</h3>
+                <p>1. 确保你的游戏版本为1.20.2</p>
+                <p>2. 点击"多人游戏" > "添加服务器"</p>
+                <p>3. 输入服务器地址: play.eternalcraft.com</p>
+                <p>4. 点击"加入服务器"</p>
+            </div>
+            
+            <div class="guide-item">
+                <h3>基础指令</h3>
+                <p>/spawn - 返回主城</p>
+                <p>/home - 回到你的家</p>
+                <p>/tpa 玩家名 - 请求传送到某玩家</p>
+                <p>/msg 玩家名 消息 - 私聊</p>
+            </div>
+            
+            <div class="guide-item">
+                <h3>获取帮助</h3>
+                <p>游戏内使用 /help 查看帮助</p>
+                <p>在聊天栏输入 !help 获取玩家帮助</p>
+                <p>联系在线管理员: /admin 消息</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Copyright © 2025 EternalCraft</p>
+        </footer>
+    </div>
+
+    <script>
+        // 简单的标签页切换
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                // 实际应用中这里应该切换不同内容
+            });
+        });
+    </script>
+</body>
+</html>
