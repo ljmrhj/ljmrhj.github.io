@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务器信息 - EternalCraft</title>
+    <style>
+        /* 共用样式同上，这里只展示新增部分 */
+        
+        .info-section {
+            margin: 30px 0;
+        }
+        
+        .info-box {
+            background: rgba(0, 0, 0, 0.7);
+            border: 4px solid var(--mc-blue);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .info-box h3 {
+            color: var(--mc-green);
+            margin-bottom: 15px;
+            font-family: 'Press Start 2P', cursive;
+        }
+        
+        .version-timeline {
+            border-left: 4px solid var(--mc-red);
+            padding-left: 20px;
+            margin-left: 10px;
+        }
+        
+        .version-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .version-item:before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--mc-gold);
+            border: 2px solid var(--mc-red);
+        }
+        
+        nav {
+            margin: 20px 0;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">EternalCraft</div>
+            <nav>
+                <a href="index.html" class="pixel-button">首页</a>
+                <a href="about.html" class="pixel-button">服务器信息</a>
+                <a href="guide.html" class="pixel-button">玩家指南</a>
+                <a href="download.html" class="pixel-button">下载</a>
+            </nav>
+        </header>
+        
+        <div class="info-section">
+            <div class="info-box">
+                <h3>服务器简介</h3>
+                <p>EternalCraft是一个以纯净生存为核心的Minecraft服务器，致力于为玩家提供长期稳定的游戏环境。我们自2020年运营至今，拥有活跃的玩家社区和完善的游戏体系。</p>
+            </div>
+            
+            <div class="info-box">
+                <h3>版本历史</h3>
+                <div class="version-timeline">
+                    <div class="version-item">
+                        <h4>2025.7.20 - beta v0.0.1</h4>
+                        <p>构建服务器</p>
+                    </div>
+                    <div class="version-item">
+                        <h4>2025.7.30 - v1.0.0</h4>
+                        <p>开放</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <h3>服务器规则</h3>
+                <ol>
+                    <li>禁止使用任何作弊客户端或漏洞</li>
+                    <li>尊重其他玩家，禁止恶意破坏</li>
+                    <li>禁止刷屏或发布不当言论</li>
+                    <li>管理员拥有最终解释权</li>
+                </ol>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Copyright © 2025 EternalCraft</p>
+        </footer>
+    </div>
+</body>
+</html>
